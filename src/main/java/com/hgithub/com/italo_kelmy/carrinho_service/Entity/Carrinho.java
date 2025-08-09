@@ -9,7 +9,6 @@ import jakarta.validation.constraints.NotNull;
 public class Carrinho {
     @Id
     private Long id;
-    private Long usuario_id;
     @NotNull
     private String produto_nome;
     @NotNull
@@ -26,7 +25,7 @@ public class Carrinho {
 
     }
 
-    public Carrinho(Long id, String produto_nome, String categoria, String descricao, int quantidade, double valor) {
+    public Carrinho(Long id,String produto_nome, String categoria, String descricao, int quantidade, double valor) {
         this.id = id;
         this.produto_nome = produto_nome;
         this.categoria = categoria;
@@ -34,6 +33,8 @@ public class Carrinho {
         this.quantidade = quantidade;
         this.valor = valor * quantidade;
     }
+
+
 
     public Long getId() {
         return id;
@@ -43,13 +44,6 @@ public class Carrinho {
         this.id = id;
     }
 
-    public Long getUsuario_id() {
-        return usuario_id;
-    }
-
-    public void setUsuario_id(Long usuario_id) {
-        this.usuario_id = usuario_id;
-    }
 
     public String getProduto_nome() {
         return produto_nome;
